@@ -1,6 +1,7 @@
-package model;
+package component;
 
 import exception.CellAlreadyTakenException;
+import model.Cell;
 
 public class Board {
     private static final char BLANK_SPACE = ' ';
@@ -20,6 +21,10 @@ public class Board {
         return board.clone();
     }
 
+    public char getCell(Cell cell) {
+        return board[cell.getRow()][cell.getColumn()];
+    }
+
     public void editCell(Cell cell, char newValue) {
         if (isCellTaken(cell)) {
             throw new CellAlreadyTakenException();
@@ -28,6 +33,6 @@ public class Board {
     }
 
     private boolean isCellTaken(Cell cell) {
-        return board[cell.getRow()][cell.getColumn()] != BLANK_SPACE;
+        return getCell(cell) != BLANK_SPACE;
     }
 }

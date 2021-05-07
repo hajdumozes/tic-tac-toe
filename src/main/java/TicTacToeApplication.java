@@ -2,7 +2,7 @@ import component.BoardPrinter;
 import component.PlayerSelector;
 import component.UserInputParser;
 import exception.CellAlreadyTakenException;
-import model.Board;
+import component.Board;
 import model.Cell;
 
 public class TicTacToeApplication {
