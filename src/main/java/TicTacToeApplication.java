@@ -1,6 +1,9 @@
+import model.Board;
+
 public class TicTacToeApplication {
 
     public static void main(String[] args) {
-        System.out.println("hello world");
+        Board board = new Board(3);
+        board.printBoardState();
     }
 }
