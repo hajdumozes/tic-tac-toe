@@ -15,4 +15,8 @@ public class Board {
     public char[][] getBoard() {
         return board.clone();
     }
+
+    public void editCell(Cell cell, char newValue) {
+        board[cell.getRow()][cell.getColumn()] = newValue;
+    }
 }

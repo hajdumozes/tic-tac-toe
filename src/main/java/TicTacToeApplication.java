@@ -11,6 +11,7 @@ public class TicTacToeApplication {
         boardPrinter.printBoardState(board.getBoard());
         UserInputParser userInputParser = new UserInputParser();
         Cell cell = userInputParser.askForInput();
-        System.out.println(cell.getRow() + "/" + cell.getColumn());
+        board.editCell(cell, 'X');
+        boardPrinter.printBoardState(board.getBoard());
     }
 }
