@@ -11,9 +11,16 @@ public class TicTacToeApplication {
         BoardPrinter boardPrinter = new BoardPrinter();
         boardPrinter.printBoardState(board.getBoard());
         PlayerSelector playerSelector = new PlayerSelector();
-        UserInputParser userInputParser = new UserInputParser();
-        Cell cell = userInputParser.askForInput();
-        board.editCell(cell, playerSelector.getCurrentPlayer().getSign());
-        boardPrinter.printBoardState(board.getBoard());
+        processGame(board, boardPrinter, playerSelector);
+    }
+
+    private static void processGame(Board board, BoardPrinter boardPrinter, PlayerSelector playerSelector) {
+        while (true) {
+            UserInputParser userInputParser = new UserInputParser();
+            Cell cell = userInputParser.askForInput();
+            board.editCell(cell, playerSelector.getCurrentPlayer().getSign());
+            boardPrinter.printBoardState(board.getBoard());
+            playerSelector.endTurn();
+        }
     }
 }

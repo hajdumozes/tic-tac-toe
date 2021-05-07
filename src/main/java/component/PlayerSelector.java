@@ -10,6 +10,12 @@ public class PlayerSelector {
 
     public PlayerSelector() {
         this.currentPlayer = PLAYER_X;
+        printWhoStarts();
+    }
+
+    private void printWhoStarts() {
+        System.out.println();
+        System.out.printf("The game will start with player %s.", currentPlayer.getSign());
     }
 
     public Player getCurrentPlayer() {
@@ -22,5 +28,11 @@ public class PlayerSelector {
         } else {
             currentPlayer = PLAYER_X;
         }
+        printNewTurn();
+    }
+
+    private void printNewTurn() {
+        System.out.println();
+        System.out.printf("Turn of player %s.", currentPlayer.getSign());
     }
 }
